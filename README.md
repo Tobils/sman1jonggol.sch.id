@@ -1,4 +1,4 @@
-# Smoeray Frontened
+# Smoeray Frontend
 frontend laman web sman1jonggol.sch.id menggunakan framework vuejs. data yang ditampilkan pada laman web dperoleh dari API.
 
 ## __CMS API Reference__
