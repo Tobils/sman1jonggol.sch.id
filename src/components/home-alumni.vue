@@ -1,6 +1,6 @@
 <template>
     <div>
-        <!-- Testimonial section  heading -->
+         <!-- Testimonial section  heading -->
         <section class="section-testimonial-heading" id="testimonialHeading">
             <div class="container">
                 <div class="row">
@@ -20,7 +20,7 @@
         <section class="section section-testimonial-content" id="testimonialContent">
             <div class="container">
 
-                <div class="row justify-content-center" v-if="data.length > 0">
+                <div class="row justify-content-center" v-if="data.length > 1">
                     <carousel class="alumni-carousel col" :margin="40" :loop="true" :nav="false" :autoplay="true" :autoplayTimeout="2000" :autoplayHoverPause="true" :smartSpeed="1000" :dots="false" :responsive="{0:{items:1},600:{items:3}, 1000:{items:3}}">
                         <div class="alumni-item" v-for="alumni in data" :key="alumni.id">
                             <div class="card card-testimonial text-center">
@@ -39,32 +39,31 @@
                         </div>
                     </carousel>
                 </div>
+                    
 
                 <div class="row">
                     <div class="col-12 text-center">
-                        <a href="/data-all/ALUMNI" class="btn btn-get-started px-4 mt-4 mx-1">
+                        <router-link to="/details/kontak/alumni" class="btn btn-get-started px-4 mt-4 mx-1">
                             Selengkapnya
-                        </a>
+                        </router-link>
                     </div>
                 </div>
                 
             </div>
-                
         </section>
+
     </div>
 </template>
 
 <script>
-import carousel from 'vue-owl-carousel';
-
-
+import carousel from 'vue-owl-carousel2';
 export default {
-    name: 'Testimoni',
+    name: 'HomeAlumni',
     props: {
-        data: Object
+        data: Array,
     },
     components: {
-        carousel
+        carousel,
     }
 }
 </script>
@@ -150,5 +149,4 @@ export default {
         }
     }
 }
-
 </style>

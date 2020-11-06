@@ -1,3 +1,4 @@
+
 <template>
     <div>
         <section class="section-guru-heading" id="guru">
@@ -18,8 +19,9 @@
         <section class="section section-guru-content" id="guruContent">
             <div class="container">
 
-                <div class="row justify-content-center" v-if="data.length > 0">
-                    <carousel class="guru-carousel col" :margin="40" :loop="true" :nav="false" :autoplay="true" :autoplayTimeout="2000" :autoplayHoverPause="true" :smartSpeed="1000" :dots="false" :responsive="{0:{items:1},600:{items:3}}">
+                <div class="row justify-content-center" v-if="data.length > 1">
+
+                    <carousel :margin="40" :loop="true" :nav="false" :autoplay="true">
                         <div class="guru-item justify-content-center" v-for="guru in data" :key="guru.id">
                             <div class="card card-guru text-center">
                                 <div class="guru-content">
@@ -33,13 +35,16 @@
                             </div>
                         </div>
                     </carousel>
+
+                    
+
                 </div>
 
                 <div class="row">
                     <div class="col-12 text-center">
-                        <a href="/data-all/GURU" class="btn btn-get-started px-4 mt-4 mx-1">
+                        <router-link to="/details/kontak/guru" class="btn btn-get-started px-4 mt-4 mx-1">
                             Selengkapnya
-                        </a>
+                        </router-link>
                     </div>
                 </div>
 
@@ -49,13 +54,11 @@
 </template>
 
 <script>
-import carousel from 'vue-owl-carousel';
-
-
+import carousel from 'vue-owl-carousel2';
 export default {
-    name: 'Guru',
+    name: 'HomeGuru',
     props: {
-        data: Object
+        data: Array
     },
     components: {
         carousel,

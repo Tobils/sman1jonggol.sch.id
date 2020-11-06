@@ -20,9 +20,8 @@
         <section class="section-popular-content">
             <div class="container">
 
-                <div class="section-popular-travel row justify-content-center" v-if="data.length > 0">
-
-                    <carousel class="col" :loop="true" :items="5" :nav="false" :autoplay="true" :margin="20" :autoplayTimeout="5000" :autoplayHoverPause="true" :smartSpeed="1000" :responsive="{0:{items:1},600:{items:3}, 1000:{items:3}}">
+                <div class="section-popular-travel row justify-content-center" v-if="data">
+                    <carousel  class="col" :loop="true" :items="3" :nav="false" :autoplay="true" :margin="20" :autoplayTimeout="5000" :autoplayHoverPause="true" :smartSpeed="1000" :responsive="{100:{items:1},600:{items:3}, 1000:{items:3}}">
                         <div class="berita-item" v-for="berita in data" :key="berita.id">
 
                             <div class="card-travel text-center d-flex flex-column">
@@ -34,9 +33,9 @@
                                     {{ berita.judul }} 
                                 </div>
                                 <div class="travel-button mt-auto">
-                                    <a :href="'/details/berita/'+berita.id" class="btn btn-travel-details px-4">
+                                    <router-link :to="'/details/berita/'+berita.id" class="btn btn-travel-details px-4">
                                         Lihat
-                                    </a>
+                                    </router-link>
                                 </div>
                             </div>
 
@@ -44,11 +43,12 @@
                     </carousel>
 
                 </div>
+                   
                 <div class="row">
-                    <div class="col-12 text-center">
-                        <a href="/data-all/BERITA" class="btn btn-get-started px-2 mx-1">
+                    <div class="col mt-3 text-center">
+                        <router-link :to="'/details/berita/all'" class="btn btn-get-started px-2 mx-1">
                             Selengkapnya
-                        </a>
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -57,18 +57,35 @@
 </template>
 
 <script>
-import carousel from 'vue-owl-carousel';
-
-
+import carousel from 'vue-owl-carousel2';
+import axios from 'axios'
 
 export default {
-    name: 'Berita',
-    props: {
-        data: Object,
-        home: Boolean
+    name: 'HomeBerita',
+    data(){
+        return {
+            loading: false,
+            data: null,
+            uri: 'https://cms.sman1jonggol.sch.id/api/v1/berita'
+        }
     },
     components: {
         carousel,
+    },
+    methods: {
+        fetchData() {
+            this.loading = true
+            axios
+                .get(this.uri)
+                .then(res => {
+                    this.data = res.data.data
+                    this.loading = false
+                })
+                .catch(err =>console.log(err))
+        }
+    },
+    created() {
+        this.fetchData()
     }
 }
 </script>

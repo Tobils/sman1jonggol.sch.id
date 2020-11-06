@@ -8,7 +8,7 @@
                     <div class="row">
                         <div class="col-12 d-flex align-items-start">
                             <div class="footer-logo">
-                                <a href="#"><img src="@/assets/logo/logo.png" width="30%" alt="logo-smoeray" class="mb-2"/></a>
+                                <a href="#"><img src="@/assets/logo/logo-smoeray.png" width="30%" alt="logo-smoeray" class="mb-2"/></a>
                             </div>
                         </div>
                         <div class="col-12 d-flex justify-content-start">
