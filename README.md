@@ -16,9 +16,9 @@ API Base URL https://cms.sman1jonggol.sch.id
 | [`/api/v1/home`](##result-home) | GET | Mneampilkan semua data berita, guru, alumni, kampus |
 | [`/api/v1/berita`](##result-berita) | GET | Menampilkan seua data berita |
 | [`/api/v1/berita/{id}`](##result-berita-id) | GET | Menampilkan data berita secara spesifik |
-| [`/api/v1/kontak?tipe={GURU|TATA_USAHA|ALUMNI}`](##result-kontak) | GET | Menampilkan data kontak dengan pilihan tipe kontak guru/tata usaha/ alumni |
+| [`/api/v1/kontak?tipe={GURU/TATA_USAHA/ALUMNI}`](##result-kontak) | GET | Menampilkan data kontak dengan pilihan tipe kontak guru/tata usaha/ alumni |
 | [`/api/v1/galleries`](##result-galleries) | GET | Menampilkan data galleries |
-| [`/api/v1/profile?tipe={sejarah|ekskul|fasilitas}`](##result-profile) | GET | menampilkan profile sekolah dengan pilihan sejarah, ekskul dan fasilitas |
+| [`/api/v1/profile?tipe={sejarah/ekskul/fasilitas}`](##result-profile) | GET | menampilkan profile sekolah dengan pilihan sejarah, ekskul dan fasilitas |
 
 <!-- <a name="home"/> -->
 ## Result Home
