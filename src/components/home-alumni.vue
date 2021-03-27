@@ -4,7 +4,10 @@
         <section class="section-testimonial-heading" id="testimonialHeading">
             <div class="container">
                 <div class="row">
-                    <div class="col text-center">
+                    <div class="col text-center"
+                        data-aos="fade-down"
+                        data-aos-delay="500"
+                    >
                         <h2>Apa Kata Alumni ?</h2>
                         <p>
                             Moments were giving them
@@ -22,7 +25,7 @@
 
                 <div class="row justify-content-center" v-if="data.length > 1">
                     <carousel class="alumni-carousel col" :margin="40" :loop="true" :nav="false" :autoplay="true" :autoplayTimeout="2000" :autoplayHoverPause="true" :smartSpeed="1000" :dots="false" :responsive="{0:{items:1},600:{items:3}, 1000:{items:3}}">
-                        <div class="alumni-item" v-for="alumni in data" :key="alumni.id">
+                        <div class="alumni-item" v-for="alumni in data" :key="alumni.id" data-aos="fade-up" data-aos-delay="500">
                             <div class="card card-testimonial text-center">
                                 <div class="testimonial-content">
                                     <img :src="alumni.photo" alt="" class="mb-4 rounded-circle ml-auto mr-auto">
@@ -56,7 +59,7 @@
 </template>
 
 <script>
-import carousel from 'vue-owl-carousel2';
+import carousel from 'vue-owl-carousel';
 export default {
     name: 'HomeAlumni',
     props: {

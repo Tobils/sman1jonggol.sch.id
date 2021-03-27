@@ -1,11 +1,8 @@
 <template>
-  <div class="navbar-main">
-    <!-- nav bar  -->
-    <div class="container">
-       
-        <b-navbar toggleable="lg" type="light" variant="light">
+    <section class="section-navbar">   
+        <b-navbar toggleable="lg" type="light" variant="light" id="navbar-detail">
             <b-navbar-brand :to="'/'" class="logo-smoeray">
-                <img src="@/assets/logo/logo-smoeray.png" alt="logo smoeray" class="ml-auto mr-auto">
+                <img src="@/assets/logo/logo-smoeray.png" alt="logo smoeray">
                 <!-- <h4>SMAN 1 JONGGOL</h4> -->
             </b-navbar-brand>
 
@@ -29,9 +26,6 @@
 
                     <b-nav-item-dropdown text="Ekskull" right>
                         <b-dropdown-item :to="'/details/profile/ekskul'">OSIS</b-dropdown-item>
-                        <b-dropdown-item href="#">PRAMUKA</b-dropdown-item>
-                        <b-dropdown-item href="#">PMR</b-dropdown-item>
-                        <b-dropdown-item href="#">KARATE</b-dropdown-item>
                     </b-nav-item-dropdown>
 
                     <b-nav-item :to="'/details/kontak/alumni'">Alumni</b-nav-item>
@@ -40,13 +34,10 @@
                 </b-navbar-nav>
             </b-collapse>
         </b-navbar>
-    </div>
 
-    <!-- agar router view berfungsi -->
-    <router-view/>
+        <router-view/>
 
-
-  </div>
+    </section>
 </template>
 
 <script>
@@ -69,6 +60,15 @@ export default {
     h4 {
         padding: 0;
     }
+}
+
+.section-navbar {
+    margin-top: 20px;
+    padding: 0 40px;
+}
+
+#navbar-detail {
+    border-radius: 10px;
 }
 
 </style>

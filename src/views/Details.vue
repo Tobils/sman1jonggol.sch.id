@@ -10,17 +10,20 @@
                     <div class="row">
                         <div class="col p-0">
                             <nav>
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item" v-if=" this.$route.params.tipe.toLowerCase() !== 'berita' ">
-                                        {{ this.$route.params.id }}
-                                    </li>
-                                    <li class="breadcrumb-item" v-else>
-                                        {{ this.$route.params.tipe }}
-                                    </li>
-                                    <li class="breadcrumb-item active">
+                                <h1 class="text-center">
+                                    <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
                                         Details
                                     </li>
+                                    <li class="breadcrumb-item active" v-if=" this.$route.params.tipe.toLowerCase() !== 'berita' ">
+                                        {{ this.$route.params.id }}
+                                    </li>
+                                    <li class="breadcrumb-item active" v-else>
+                                        {{ this.$route.params.tipe }}
+                                    </li>
+                                    
                                 </ol>
+                                </h1>
                             </nav>
                         </div>
                     </div>
@@ -33,7 +36,7 @@
 
                                         <div class="card mx-2 my-2" style="width: 18rem;" v-for="berita in data" :key="berita.id" >
                                             <div class="berita-image" v-if="berita.galleries.length > 0">
-                                                    <img :src="berita.galleries[0].photo" alt="" class="card-image-top" width="100px">
+                                                <img :src="berita.galleries[0].photo" alt="" class="card-image-top" width="100px">
                                             </div>
                                             <div class="card-body">
                                                 <h5 class="card-title">
@@ -88,24 +91,17 @@
 
 
                     <div class="row" v-else-if="this.$route.params.tipe.toLowerCase() == 'kontak'">
-                        <div class="col-lg-12 pl-lg-0">
-                            <div class="card card-details">
-                                <div class="d-flex flex-row align-content-stretch flex-wrap">
-
-                                    <div class="card shadow  mx-2 my-2" style="width: 18rem;" v-for="kontak in data" :key="kontak.id">
-                                        <img :src="kontak.photo" alt="photo" width="100px" class="rounded-circle  ml-auto mr-auto mt-3">
-                                        <div class="card-body">
-                                            <p class="text-center text-primary">{{ kontak.name }}</p>
-                                            <hr>
-                                            <p class="text-center" v-if="kontak.kampus_alumni !== undefined">
-                                                {{ kontak.kampus_alumni.name }}
-                                            </p>
-                                            <p class="text-center" v-if="kontak.subject !== undefined">
-                                                {{ kontak.subject }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="card shadow card-details mx-auto my-5 col-md-4 col-sm-12 p-4" style="min-width: 18rem; max-width:18rem;" v-for="kontak in data" :key="kontak.id">
+                            <img :src="kontak.photo" alt="photo" width="100px" class="rounded-circle  ml-auto mr-auto mt-3" id="avatar-image">
+                            <div class="card-body">
+                                <p class="text-center text-primary">{{ kontak.name }}</p>
+                                <hr>
+                                <p class="text-center" v-if="kontak.kampus_alumni !== undefined">
+                                    {{ kontak.kampus_alumni.name }}
+                                </p>
+                                <p class="text-center" v-if="kontak.subject !== undefined">
+                                    {{ kontak.subject }}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -326,12 +322,12 @@ export default {
 
 .section-details-header {
     min-height: 310px;
-    background-color: #e4e6e8;
-    margin-top: -70px;
+    background-color: #cbcbcb;
+    margin-top: -90px;
 }
 
 .section-details-content{
-    margin-top: -210px;
+    margin-top: -180px;
     min-height: 100vh;
 
     .breadcrumb {
@@ -350,6 +346,11 @@ export default {
     .card-details {
         padding: 50px;
         border-radius: 11px;
+
+        #avatar-image {
+            border-radius: 50%;
+            box-shadow: 50px black;
+        }
 
         h1 {
             font-size: 26px;
