@@ -1,20 +1,25 @@
 <template>
     <!-- header  -->
     <header class="text-center">
-        <h1>
-            SMAN I JONGGOL
-            <br>
-        </h1>
-        <h3>
-            Kampus hijau berbudaya
-        </h3>
-        <p class="mt-5">
-            Jl. Sukasirna, Jonggol, Bogor
-        </p>
-        <router-link to="/details/profile/sejarah" class="btn btn-get-started px-4 mt-4">
-            Selengkapnya
-        </router-link>
-    <router-view/>
+        <div class="section-header"
+            data-aos="fade-down" 
+            data-aos-delay="500"
+        >
+            <h1>
+                SMAN I JONGGOL
+                <br>
+            </h1>
+            <h4 class="p-2">
+                Kampus hijau berbudaya
+            </h4>
+            <p class="mt-5 m-2">
+                Jl. Sukasirna, Jonggol, Bogor
+            </p>
+            <router-link to="/details/profile/sejarah" class="btn btn-get-started px-4 mt-4">
+                Profile
+            </router-link>
+            <router-view/>
+        </div>
         
     </header>
     
@@ -32,8 +37,9 @@ export default {
 <style lang="scss">
 // header
 header {
-    padding: 180px 0 160px;
-    // margin-top: -70px;
+    padding: 180px 0 180px;
+    background-color: #cbcbcb;
+    margin-top: -90px;
     // background-image: url('../images/header.jpg');
     // background-size: cover;
 

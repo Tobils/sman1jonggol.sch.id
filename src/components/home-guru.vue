@@ -19,9 +19,8 @@
         <section class="section section-guru-content" id="guruContent">
             <div class="container">
 
-                <div class="row justify-content-center" v-if="data.length > 1">
-
-                    <carousel :margin="40" :loop="true" :nav="false" :autoplay="true">
+                <div class="row justify-content-center" v-if="data.length > 0">
+                    <carousel class="guru-carousel col" :margin="40" :loop="true" :nav="false" :autoplay="true" :autoplayTimeout="2000" :autoplayHoverPause="true" :smartSpeed="1000" :dots="false" :responsive="{0:{items:1},600:{items:3}}">
                         <div class="guru-item justify-content-center" v-for="guru in data" :key="guru.id">
                             <div class="card card-guru text-center">
                                 <div class="guru-content">
@@ -35,9 +34,6 @@
                             </div>
                         </div>
                     </carousel>
-
-                    
-
                 </div>
 
                 <div class="row">
@@ -47,14 +43,14 @@
                         </router-link>
                     </div>
                 </div>
-
             </div>
         </section>
+        <router-view/>
     </div>
 </template>
 
 <script>
-import carousel from 'vue-owl-carousel2';
+import carousel from 'vue-owl-carousel';
 export default {
     name: 'HomeGuru',
     props: {
@@ -68,7 +64,7 @@ export default {
 
 <style lang="scss">
 .section-guru-content {
-    margin-top: -300px;
+    margin-top: -250px;
     padding-bottom: 50px;
 
 

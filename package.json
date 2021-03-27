@@ -8,14 +8,20 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@chenfengyuan/vue-carousel": "^1.0.6",
+    "@vue/compiler-sfc": "^3.0.8",
+    "aos": "^3.0.0-beta.6",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.3",
     "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
     "vue": "^2.6.12",
+    "vue-carousel": "^0.18.0",
+    "vue-owl-carousel": "^2.0.3",
     "vue-owl-carousel2": "^2.0.7",
     "vue-product-zoomer": "^3.0.1",
-    "vue-router": "^3.4.6"
+    "vue-router": "^3.4.6",
+    "vueperslides": "^2.13.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
